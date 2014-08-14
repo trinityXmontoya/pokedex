@@ -1,8 +1,12 @@
 /*PAGE*/
 
-/*body {
-  background-color: black;
-}*/
+#container {
+  margin: 0 auto;
+}
+
+body {
+  background-image: url('http://subtlepatterns.com/patterns/geometry2.png');
+}
 
 /*SLIDESHOW*/
 .hide-me {
@@ -15,15 +19,21 @@
 
 #slideshow{
   margin: 0 auto;
-  width: 60%;
-  height: 40%;
   display: inline-block;
 }
 
+.arrow {
+  display: inline-block;
+  font-size: 35px;
+  float: right;
+  margin: 0 5px;
+
+}
 .img {
-  width: 404px;
-  height: 523px;
-  background-size: cover
+  width: 419px;
+  height: 613px;
+  background-size: cover;
+  margin: 0 auto;
 }
 
 #img_1 {
@@ -49,10 +59,26 @@
 /*EXPLANATION*/
 
 #explanation {
-  font-size: 25px;
-  color: blue;
-  background-color: black;
+  font-family: Helvetica;
+  font-size: 18px;
+  background-color: rgba(142, 203, 211, 0.7);
   padding: 20px;
-  width: 300px;
+  width: 240px;
+  top: 0;
   display: inline-block;
+  float: left;
+  margin: 30px 65px 0 21px;
+  border-radius: 10px;
+}
+
+#byline {
+  text-align: center;
+}
+
+#explanation a {
+  color: black;
+}
+
+#explanation hr {
+  border-color: black;
 }

@@ -5,23 +5,27 @@
   <title>Pokdx</title>
   <link rel="stylesheet" href="style.css">
   <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
   <script src="app.js"></script>
 </head>
 <body>
-  <div id="slideshow">
-    <div id="img_1" class="img display-me" data-id="1" ></div>
-    <div id="img_2" class="img hide-me" data-id="2"></div>
-    <div id="img_3" class="img hide-me" data-id="3"></div>
-    <div id="img_4" class="img hide-me" data-id="4"></div>
-    <div id="img_5" class="img hide-me" data-id="5"></div>
-  </div>
+  <div id="container">
+    <div id="slideshow">
+      <div id="img_1" class="img display-me" data-id="1" ></div>
+      <div id="img_2" class="img hide-me" data-id="2"></div>
+      <div id="img_3" class="img hide-me" data-id="3"></div>
+      <div id="img_4" class="img hide-me" data-id="4"></div>
+      <div id="img_5" class="img hide-me" data-id="5"></div>
+    </div>
 
-  <div id="explanation">
-    <div class="arrow" id="left-arrow"> < </div>
-    Pure CSS Pokedex
-    <hr>
-     Original one was built using Sinatra and the <a href="http://pokeapi.co/">Pokemon API</a>, these are just the screenshots until I locate the missing files!
-    <div class="arrow" id="right-arrow"> > </div>
+    <div id="explanation">
+      <span id="byline">Pure CSS Pokedex</span>
+      <hr>
+       Original one was built using Sinatra and the <a href="http://pokeapi.co/">Pokemon API</a>, these are just the screenshots until I locate the missing files!
+      <br>
+      <div class="arrow" id="right-arrow"><i class="fa fa-arrow-circle-right"></i></div>
+      <div class="arrow" id="left-arrow"><i class="fa fa-arrow-circle-left"></i></div>
+    </div>
   </div>
 
 </body>
