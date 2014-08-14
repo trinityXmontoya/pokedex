@@ -1,0 +1,58 @@
+/*PAGE*/
+
+/*body {
+  background-color: black;
+}*/
+
+/*SLIDESHOW*/
+.hide-me {
+  display: none;
+}
+
+.display-me {
+  display: block !important;
+}
+
+#slideshow{
+  margin: 0 auto;
+  width: 60%;
+  height: 40%;
+  display: inline-block;
+}
+
+.img {
+  width: 404px;
+  height: 523px;
+  background-size: cover
+}
+
+#img_1 {
+  background-image: url('pokdx_img_1.png');
+}
+
+#img_2 {
+  background-image: url('pokdx_img_2.png');
+}
+
+#img_3 {
+  background-image: url('pokdx_img_3.png');
+}
+
+#img_4 {
+  background-image: url('pokdx_img_4.png');
+}
+
+#img_5 {
+  background-image: url('pokdx_img_5.png');
+}
+
+/*EXPLANATION*/
+
+#explanation {
+  font-size: 25px;
+  color: blue;
+  background-color: black;
+  padding: 20px;
+  width: 300px;
+  display: inline-block;
+}
