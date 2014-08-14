@@ -20,6 +20,8 @@ body {
 #slideshow{
   margin: 0 auto;
   display: inline-block;
+  width: 50%;
+  
 }
 
 .arrow {
@@ -63,11 +65,12 @@ body {
   font-size: 18px;
   background-color: rgba(142, 203, 211, 0.7);
   padding: 20px;
-  width: 240px;
+  width: 20%;
+  min-width: 204px;
   top: 0;
   display: inline-block;
   float: left;
-  margin: 30px 65px 0 21px;
+  margin: 30px 65px 30px 21px;
   border-radius: 10px;
 }
 
