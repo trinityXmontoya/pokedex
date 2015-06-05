@@ -18,7 +18,7 @@
 	width: 419px;
   height: 613px;
   border-radius: 42px;
-  box-shadow: -13px 10px 0 10px rgb(229, 0, 0);
+  box-shadow: -13px 10px 0 10px #e50000;
   margin: 0 auto;
 }
 
@@ -28,10 +28,10 @@
 }
 
 #big-blue-indicator-light {
-	@include circle(70px, rgb(140, 0, 0));
+	@include circle(70px, #8c0000);
 	border:solid black 2px;
 	box-shadow: -2px 2px 0px 3px black;
-  margin: 20px 0 20px 20px;
+  margin: 20px 0 0 20px;
   display: inline-block;
 
 	.big-blue-indicator-light-inner-circle {
@@ -64,3 +64,67 @@
 		@include circle(17px, green)
 	}
 }
+
+
+#curve-areas {
+	position: relative;
+
+	.top-area-curves {
+		display: inline-block;
+		height: 20px;
+	  width: 50%;
+
+	  &.left-curve {
+	  	margin-top: -13px;
+		  border-bottom: solid black 9px;
+		  border-right: solid black 4px;
+		  border-bottom-right-radius: 51px;
+		}
+
+		&.right-curve {
+		  border-top: solid black 9px;
+		  border-left: solid black 4px;
+		  border-top-left-radius: 51px;
+		  margin-top: -61px;
+  		margin-left: -4px;
+		  position: absolute;
+		}
+	}
+
+	.top-area-curve-connector {
+		height: 19px;
+	  background-color: black;
+	  width: 4px;
+	  display: inline-block;
+	  margin: -32px 0 0 -4px;
+	  position: absolute;
+	}
+
+
+}
+
+#pokeball-container {
+	display: inline-block;
+	@include circle(55px, white);
+  border: solid black 2px;
+  float: right;
+  box-shadow: -3px 1px 0px 0px black;
+  margin: -57px 20px 0 0;
+
+  #pokeball-top-half {
+  	background-color: #FE0000;
+  	border-top-left-radius: 100px;
+  	border-top-right-radius: 100px;
+  	height: 25.5px;
+  	border-bottom: solid black 3px;
+  }
+
+  #pokeball-center-ball {
+  	@include circle(18px, white);
+  	border: solid black 3px;
+  	margin: -13px auto;
+  }
+}
+
+
+
