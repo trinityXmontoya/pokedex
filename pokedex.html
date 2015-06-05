@@ -1,0 +1,41 @@
+<head>
+  <title>pokedex</title>
+</head>
+
+<body>
+  {{> shell}}
+</body>
+
+<template name="shell">
+
+	<div id="wrapper">
+		<div id="pokedex">
+
+			<div id="top-indicator-area">
+				<div id="indicator-lights">
+					<div id="big-blue-indicator-light">
+						<div class="big-blue-indicator-light-inner-circle"></div>
+					</div>
+					<ul id="small-indicator-lights">
+						<li class="small-indicator-light red-light"></li>
+						<li class="small-indicator-light yellow-light"></li>
+						<li class="small-indicator-light green-light"></li>
+					</ul>
+				</div>
+				<div class="top-indicator-area-separator left-separator"></div>
+				<div class="top-indicator-area-separator right-separator"></div>
+			</div>
+			{{>display}}
+			{{>info}}
+		</div>
+	</div>
+
+</template>
+
+<template name="display">
+	I am the display
+</template>
+
+<template name="info">
+	I am the info
+</template>

@@ -1,0 +1,66 @@
+/* CSS declarations go here */
+
+
+@mixin rounded($amount){
+	border-radius: $amount;
+}
+
+@mixin circle($diameter,$bg-color){
+	width: $diameter;
+	height: $diameter;
+	background-color: $bg-color;
+	border-radius: 100%;
+}
+
+
+#pokedex {
+	background-color: red;
+	width: 419px;
+  height: 613px;
+  border-radius: 42px;
+  box-shadow: -13px 10px 0 10px rgb(229, 0, 0);
+  margin: 0 auto;
+}
+
+
+#top-indicator-area {
+	margin-top: 15px;
+}
+
+#big-blue-indicator-light {
+	@include circle(70px, rgb(140, 0, 0));
+	border:solid black 2px;
+	box-shadow: -2px 2px 0px 3px black;
+  margin: 20px 0 20px 20px;
+  display: inline-block;
+
+	.big-blue-indicator-light-inner-circle {
+		@include circle(62px, #01ffff);
+		margin: 4px auto;
+	}
+}
+
+#small-indicator-lights {
+	display: inline-block;
+	list-style: none;
+	margin: 15px 10px;
+  padding: 0;
+  vertical-align: top;
+
+	.small-indicator-light {
+		float: left;
+		border: solid black 2px;
+		box-shadow: -3px 1px 0px 0px black;
+		margin-right: 10px;
+	}
+
+	.red-light {
+		@include circle(17px, red)
+	}
+	.yellow-light {
+		@include circle(17px, yellow)
+	}
+	.green-light {
+		@include circle(17px, green)
+	}
+}
