@@ -55,7 +55,9 @@
 				</div>
 			</div>
 			<div id="display-controls">
-				<div id="display-btn"></div>
+				<div id="display-btn">
+					<p class='icon-volume-down'></p>
+				</div>
 				<ul id="display-speakers">
 					<li class="display-speaker"></li>
 					<li class="display-speaker"></li>
@@ -65,6 +67,7 @@
 		</div>
 	</div>
 
+	<audio id="pokemon-theme-song" src="http://a.tumblr.com/tumblr_lt59z9tjGx1qgw2ypo1.mp3"></audio>
 </template>
 
 <template name="info">
@@ -74,7 +77,9 @@
 			{{currentPage.title}}
 		</div>
 		<div id="info-bottom-area">
-			<div id="info-button"></div>
+			<a href="/">
+				<div id="info-button"></div>
+			</a>
 			<div id="info-screen">
 				{{{currentPage.desc}}}
 			</div>
@@ -95,7 +100,7 @@
 </template>
 
 <template name="defaultScreen">
-	<img src="pokemon-loading-screen.gif">
+	<img src="images/pokemon-loading-screen.gif">
 </template>
 
 <template name="ErrScreen">

@@ -1,6 +1,12 @@
 // --------------------
 // MIXINS
 // --------------------
+@mixin vertical-align {
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
 @mixin circle($diameter,$bg-color){
 	width: $diameter;
 	height: $diameter;
@@ -218,6 +224,17 @@
 				@include btn-click-effect(2px);
 				display: inline-block;
 				box-shadow: 0 2px 0 0 black;
+				text-align: center;
+				transform-style: preserve-3d;
+
+				p {
+					@include vertical-align;
+					margin: 0;
+					padding: 0;
+					font-family: 'font-awesome-specific';
+					font-size: 1rem;
+
+				}
 			}
 
 			#display-speakers {

@@ -10,10 +10,16 @@ if Meteor.isClient
 
   Template.display.helpers counter: ->
     Session.get 'counter'
-  Template.display.events 'click button': ->
-    # increment the counter when button is clicked
-    Session.set 'counter', Session.get('counter') + 1
-    return
+  Template.display.events
+    'click #display-btn': ()->
+      toggleMusic()
+
+  toggleMusic = ()->
+    pokeSong = document.getElementById('pokemon-theme-song')
+    if pokeSong.paused
+      pokeSong.play()
+    else
+      pokeSong.pause()
 
   Template.displayScreenContent.helpers
     currentScreen: ()->
