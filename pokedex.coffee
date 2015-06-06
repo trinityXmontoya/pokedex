@@ -1,5 +1,6 @@
 if Meteor.isClient
 
+  Session.setDefault('currentPage','default')
 
   Template.shell.helpers counter: ->
     Session.get 'counter'
@@ -23,9 +24,12 @@ if Meteor.isClient
       $('#info-arrow-keys').css('margin','-11px 0')
 
 
-  # Template.displayScreenContent.helpers
-  #   contentTemplate: (cnt)->
-  #     console.log cnt
+  Template.displayScreenContent.helpers
+    currentScreen: ()->
+      page = Session.get('currentPage')
+      switch page
+        when 'default' then Template.defaultScreen
+        else Template.ErrScreen
 
 
 

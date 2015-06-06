@@ -50,7 +50,9 @@
 				<li class="display-light-red"></li>
 			</ul>
 			<div id="display-screen">
-				{{>displayScreenContent}}
+				<div id="display-screen-content">
+					{{>displayScreenContent}}
+				</div>
 			</div>
 			<div id="display-controls">
 				<div id="display-btn"></div>
@@ -92,4 +94,15 @@
 
 </template>
 
-<template name="displayScreenContent"></template>
+<template name="displayScreenContent">
+	{{>currentScreen}}
+</template>
+
+<template name="defaultScreen">
+	<img src="pokemon-loading-screen.gif">
+</template>
+
+<template name="ErrScreen">
+	Not sure how you got here...
+	Return to normalcy!
+</template>
