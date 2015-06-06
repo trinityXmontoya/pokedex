@@ -14,7 +14,7 @@
 
 
 #pokedex {
-	background-color: red;
+	background-color: #FB0505;
 	width: 419px;
   height: 613px;
   border-radius: 42px;
@@ -25,15 +25,15 @@
 		 margin: 15px 0;
 
 		#big-blue-indicator-light {
-			@include circle(70px, #8c0000);
+			@include circle(70px, white);
 			border:solid black 2px;
-			box-shadow: -2px 2px 0px 3px black;
 		  margin: 20px 0 0 20px;
 		  display: inline-block;
 
 			.big-blue-indicator-light-inner-circle {
-				@include circle(62px, #01ffff);
-				margin: 4px auto;
+				@include circle(55px, #01ffff);
+				margin: 2px 7px;
+				border: solid black 3px;
 			}
 		}
 
@@ -52,13 +52,13 @@
 			}
 
 			.red-light {
-				@include circle(17px, red)
+				@include circle(17px, #FA0505)
 			}
 			.yellow-light {
-				@include circle(17px, yellow)
+				@include circle(17px, #FBFB05)
 			}
 			.green-light {
-				@include circle(17px, green)
+				@include circle(17px, #4FFA05)
 			}
 		}
 	}
@@ -105,7 +105,7 @@
 	  border: solid black 2px;
 	  float: right;
 	  box-shadow: -3px 1px 0px 0px black;
-	  margin: -57px 20px 0 0;
+	  margin: -57px 27px 0 0;
 
 	  #pokeball-top-half {
 	  	background-color: #FE0000;
@@ -127,7 +127,7 @@
 
 	#display-container {
 		position: relative;
-		background-color: gray;
+		background-color: #B0B0B0;
 	  border: solid black 4px;
 	  margin: 0 auto;
 	  width: 370px;
@@ -136,23 +136,38 @@
 	  box-shadow: -1px 3px 0 1px black;
 
   	#display-cutout {
-	  	background-color: red;
-	  	width: 50px;
-	  	height: 60px;
+	  	width: 0;
+	  	height: 0;
+	  	border-style: solid;
+	  	border-width: 60px 0 0 60px;
+	  	border-color: transparent transparent transparent #FB0505;
 	  	position: absolute;
-	  	bottom: 0;
-	  	left: 0;
+	  	bottom: -8px;
+	  	left: -6px;
+
+	  	#display-cutout-faux-border {
+	  		background-color: black;
+			  height: 80px;
+			  width: 7px;
+			  transform: rotate(135deg);
+			  bottom: -7px;
+			  left: -32px;
+			  position: absolute;
+	  	}
 	  }
 
 		#display-indicator-lights {
 			list-style: none;
-			margin: 2px auto;
+			margin: 2px -22px;
+		  left: 50%;
+		  position: absolute;
+		  padding: 0;
 
 			.display-light-red {
-				@include circle(10px, red);
+				@include circle(10px, #F90404);
 				border: solid black 2px;
 				float: left;
-				margin-right: 5px;
+				margin-right: 10px;
 				box-shadow: -2px 0 0 0 black;
 			}
 		}
@@ -160,10 +175,36 @@
 		#display-screen {
 			background-color: white;
 		  border-radius: 10px;
-		  margin: 17px auto;
+		  margin: 17px auto 8px auto;
 		  width: 345px;
-		  height: 175px;
+		  height: 186px;
 		  border: solid black 3px;
+		}
+
+		#display-controls {
+			margin-left: 50px;
+
+			#display-btn {
+				@include circle(35px, #FB0505);
+				border: solid black 3px;
+				display: inline-block;
+			}
+
+			#display-speakers {
+				list-style: none;
+				margin: 0 30px 0 0;
+				padding: 0;
+				display: inline-block;
+				float: right;
+
+				.display-speaker {
+					background-color: black;
+					width: 106px;
+					height: 10px;
+					margin: 4px 0;
+					border-radius: 4px;
+				}
+			}
 		}
 
 	}

@@ -43,7 +43,9 @@
 <template name="display">
 	<div id="display-wrapper">
 		<div id="display-container">
-			<div id="display-cutout"></div>
+			<div id="display-cutout">
+				<div id="display-cutout-faux-border"></div>
+			</div>
 
 			<ul id="display-indicator-lights">
 				<li class="display-light-red"></li>
@@ -53,7 +55,11 @@
 			</div>
 			<div id="display-controls">
 				<div id="display-btn"></div>
-				<div id="display-speaker"></div>
+				<ul id="display-speakers">
+					<li class="display-speaker"></li>
+					<li class="display-speaker"></li>
+					<li class="display-speaker"></li>
+				</ul>
 			</div>
 		</div>
 	</div>
