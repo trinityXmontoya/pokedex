@@ -7,6 +7,7 @@
 <font-face font-family="font-awesome-specific" font-weight="400" font-stretch="normal" units-per-em="1000" ascent="850" descent="-150" />
 <missing-glyph horiz-adv-x="1000" />
 <glyph glyph-name="volume-down" unicode="&#xe800;" d="m429 654v-608q0-14-11-25t-25-10-25 10l-186 186h-146q-15 0-25 11t-11 25v214q0 15 11 25t25 11h146l186 186q10 10 25 10t25-10 11-25z m214-304q0-42-24-79t-63-52q-5-3-14-3-14 0-25 10t-10 26q0 12 6 20t17 14 19 12 16 20 6 32-6 32-16 20-19 12-17 14-6 20q0 15 10 26t25 10q9 0 14-3 39-15 63-52t24-79z" horiz-adv-x="642.9" />
+<glyph glyph-name="home" unicode="&#xe801;" d="m888 336q16-16 11-27t-27-11l-84 0 0-310q0-14-1-21t-8-13-23-6l-204 0 0 310-204 0 0-310-194 0q-28 0-35 10t-7 30l0 310-84 0q-22 0-27 11t11 27l400 402q16 16 38 16t38-16z" horiz-adv-x="900" />
 </font>
 </defs>
 </svg>

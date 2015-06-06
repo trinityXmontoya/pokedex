@@ -227,13 +227,12 @@
 				text-align: center;
 				transform-style: preserve-3d;
 
-				p {
+				.icon-volume-down {
 					@include vertical-align;
 					margin: 0;
 					padding: 0;
 					font-family: 'font-awesome-specific';
 					font-size: 1rem;
-
 				}
 			}
 
@@ -290,14 +289,27 @@
 		margin-bottom: 17px;
 		padding-top: 17px;
 
-		#info-button {
-			@include circle(35px, #307BFB);
-			@include BLK-border(2px);
-			@include btn-click-effect(2px);
-			vertical-align: top;
-			display: inline-block;
-			margin: 0 5px;
-			box-shadow: 0px 2px 0 0 black;
+		.home-link {
+			color: transparent;
+
+			#info-btn {
+				@include circle(35px, #307BFB);
+				@include BLK-border(2px);
+				@include btn-click-effect(2px);
+				vertical-align: top;
+				display: inline-block;
+				margin: 0 5px;
+				box-shadow: 0px 2px 0 0 black;
+
+				.icon-home {
+					@include vertical-align;
+					margin: 0;
+					padding: 0;
+					font-family: 'font-awesome-specific';
+					font-size: 1rem;
+					color: black;
+				}
+			}
 		}
 
 		#info-screen {

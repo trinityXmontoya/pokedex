@@ -44,4 +44,5 @@
   /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
 }
 
-.icon-volume-down:before { content: '\e800'; } /* '' */
+.icon-volume-down:before { content: '\e800'; }
+.icon-home:before { content: '\e801'; }
