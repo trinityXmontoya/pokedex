@@ -1,10 +1,6 @@
-/* CSS declarations go here */
-
-
-@mixin rounded($amount){
-	border-radius: $amount;
-}
-
+// --------------------
+// MIXINS
+// --------------------
 @mixin circle($diameter,$bg-color){
 	width: $diameter;
 	height: $diameter;
@@ -12,7 +8,9 @@
 	border-radius: 100%;
 }
 
-
+// --------------------
+// SHELL
+// --------------------
 #pokedex {
 	background-color: #FB0505;
 	width: 419px;
@@ -23,6 +21,7 @@
 
 	#top-indicator-area {
 		 margin: 15px 0;
+		 overflow: hidden;
 
 		#big-blue-indicator-light {
 			@include circle(70px, white);
@@ -123,7 +122,11 @@
 	}
 }
 
+// --------------------
+// DISPLAY
+// --------------------
 #display-wrapper {
+	margin-bottom: 15px;
 
 	#display-container {
 		position: relative;
@@ -206,10 +209,116 @@
 				}
 			}
 		}
-
 	}
 }
 
+// --------------------
+// INFO
+// --------------------
 
+#info-container {
+	width: 370px;
+  background-color: #B0B0B0;
+  border: solid black 4px;
+  margin: 0 auto;
+  border-radius: 9px;
+	font-family: monospace;
+	color: black;
 
+	#info-header {
+		background-color: #FBFB05;
+		border: solid black 2px;
+		border-radius:  6px;
+		text-align: center;
+		text-transform: uppercase;
+		margin: 7px auto;
+		width: 350px;
+		font-size: 1rem;
+  	padding: 4px 0;
+	}
+
+	#info-bottom-area {
+		margin-bottom: 17px;
+		padding-top: 17px;
+
+		#info-button {
+			display: inline-block;
+			@include circle(35px, #307BFB);
+			border: solid black 2px;
+			margin: 0 5px;
+			box-shadow: -2px 0 0 0 black;
+		}
+
+		#info-screen {
+			display: inline-block;
+		  width: 204px;
+		  height: 66px;
+		  font-size: .9rem;
+		  background-color: #FBFB05;
+		  padding: 5px;
+		  border: solid black 2px;
+		  margin: -5px 6px 0 -5px;
+		}
+
+		#info-arrow-keys {
+			display: inline-block;
+			position: relative;
+			vertical-align: top;
+			margin-left: -4px;
+
+			.arrow-key {
+				background-color: #056565;
+				position: absolute;
+				border: solid 2px black;
+				box-shadow: -4px 2px 0 0 black;
+
+				&.key-left {
+				  width: 38px;
+				  height: 20px;
+				  margin-top: 25px;
+				  border-top-left-radius: 5px;
+				  border-bottom-left-radius: 5px;
+				  border-right: none;
+				}
+				&.key-right {
+				  width: 38px;
+				  height: 20px;
+				  margin-top: 25px;
+				  margin-left: 39px;
+				  border-top-right-radius: 5px;
+				  border-bottom-right-radius: 5px;
+				  border-left: none;
+				}
+				&.key-top {
+					width: 20px;
+				  height: 38px;
+				  border-top-left-radius: 5px;
+				  border-top-right-radius: 5px;
+				  margin: -2px 27px;
+				  border-bottom: none;
+				  z-index: 1;
+				}
+				&.key-bottom {
+					width: 20px;
+				  height: 38px;
+				  margin-top: 50px;
+				  border-bottom-left-radius: 5px;
+				  border-bottom-right-radius: 5px;
+				  left: 50%;
+				  margin: 35px 0 0 27px;
+				  border-top: none;
+				}
+			}
+
+			.arrow-key-center {
+				position: absolute;
+			  background-color: #056565;
+			  height: 20px;
+			  width: 28px;
+			  margin: 27px 0 0 23px;
+			  z-index: 2;
+			}
+		}
+	}
+}
 
