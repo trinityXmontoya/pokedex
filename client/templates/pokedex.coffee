@@ -1,5 +1,8 @@
 if Meteor.isClient
 
+  # Template.pokeIndex.onCreated ()->
+  #   this.subscribe("pokemon")
+
   Session.setDefault('currentPage','default')
 
   Template.shell.helpers counter: ->
@@ -26,7 +29,12 @@ if Meteor.isClient
       page = Session.get('currentPage')
       switch page
         when 'default' then Template.defaultScreen
+        when 'index' then Template.pokeIndex
         else Template.ErrScreen
+
+  Template.pokeIndex.helpers
+    pokemon: ()->
+      return Pokemon.find({}, {sort: {id: 1}} )
 
   Template.info.helpers counter: ->
     Session.get 'counter'
@@ -49,7 +57,7 @@ if Meteor.isClient
           {
             title: 'Welcome To The Pokedex'
             desc: '
-              <a href="/dogs">Pokemon Index</a>
+              <a href="/index">Pokemon Index</a>
               <br>
               <a href="/types">Type Index</a>
               <br>
@@ -72,6 +80,7 @@ if Meteor.isClient
             desc: "we made it!!!"
           }
         else {title: '404', desc: '<a href="/">Return Home</a>'}
+
 
 # Template.registerHelper 'htmlSafe' (string)->
 #   return Spacebars.SafeString(string)

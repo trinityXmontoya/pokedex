@@ -109,3 +109,30 @@
 	Not sure how you got here...
 	Return to normalcy!
 </template>
+
+
+<template name="pokePreview">
+	<ul class="poke-stats">
+				<li>{{weight}}</li>
+				<li>{{height}}</li>
+				<li>{{hp}}</li>
+				<li>{{attack}}</li>
+				<li>{{defense}}</li>
+				<li>{{speed}}</li>
+				<li>{{special_atk}}</li>
+				<li>{{special_df}}</li>
+				<li>{{evolutions}}</li>
+				<li>{{types}}</li>
+			</ul>
+</template>
+
+<template name="pokeIndex">
+	<!-- <div id="all-poke-container"> -->
+		{{#each pokemon}}
+		<div class="poke-container" style="background-image:url('http://pokeapi.co/media/img/{{id}}.png')">
+			<p class="poke-id">{{id}}</p>
+			<p class="poke-name">{{name}}</p>
+		</div>
+		{{/each}}
+	<!-- </div> -->
+</template>
