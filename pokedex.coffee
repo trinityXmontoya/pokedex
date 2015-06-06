@@ -22,7 +22,17 @@ if Meteor.isClient
     'mouseup .arrow-key, mouseout .arrow-key': (evt) ->
       $('#info-arrow-keys').css('margin','-11px 0')
 
-if Meteor.isServer
-  Meteor.startup ->
-    # code to run on server at startup
-    return
+
+  # Template.displayScreenContent.helpers
+  #   contentTemplate: (cnt)->
+  #     console.log cnt
+
+
+
+
+
+
+# if Meteor.isServer
+#   Meteor.startup ->
+#     # code to run on server at startup
+#     return
