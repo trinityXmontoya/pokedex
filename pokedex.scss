@@ -12,6 +12,18 @@
 	border: solid black $width;
 }
 
+@mixin btn-click-effect($margin-diff:'auto') {
+	@if $margin-diff == 'auto' {
+		&:active { box-shadow: none;}
+	}
+	@else {
+		&:active {
+			box-shadow: none;
+			margin-top: $margin-diff !important;
+		}
+	}
+}
+
 // --------------------
 // SHELL
 // --------------------
@@ -194,8 +206,9 @@
 			#display-btn {
 				@include circle(35px, #FB0505);
 				@include BLK-border(3px);
+				@include btn-click-effect(2px);
 				display: inline-block;
-				box-shadow: -2px 0 0 0 black;
+				box-shadow: 0 2px 0 0 black;
 			}
 
 			#display-speakers {
@@ -248,9 +261,11 @@
 		#info-button {
 			@include circle(35px, #307BFB);
 			@include BLK-border(2px);
+			@include btn-click-effect(2px);
+			vertical-align: top;
 			display: inline-block;
 			margin: 0 5px;
-			box-shadow: -2px 0 0 0 black;
+			box-shadow: 0px 2px 0 0 black;
 		}
 
 		#info-screen {
@@ -275,6 +290,7 @@
 				position: absolute;
 				border: solid 2px black;
 				box-shadow: -4px 2px 0 0 black;
+				@include btn-click-effect();
 
 				&.key-left {
 				  width: 38px;
