@@ -9,3 +9,4 @@ autopublish
 insecure
 coffeescript
 fourseven:scss
+iron:router

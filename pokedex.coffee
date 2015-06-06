@@ -43,11 +43,11 @@ if Meteor.isClient
           {
             title: 'Welcome To The Pokedex'
             desc: '
-              <a class="route-change" data-id="index">Pokemon Index</a>
+              <a href="/dogs">Pokemon Index</a>
               <br>
-              <a class="route-change" data-id="types">Type Index</a>
+              <a href="/types">Type Index</a>
               <br>
-              <a class="route-change" data-id="battle">Battle</a>
+              <a href="/battle">Battle</a>
             '
           }
         when 'index'
@@ -60,7 +60,12 @@ if Meteor.isClient
             title: "Battle Royale"
             desc: "Please choose your trainer to send into battle."
           }
-        else {title: 'yours', desc: 'mine'}
+        when 'dogs'
+          {
+            title: "dogs"
+            desc: "we made it!!!"
+          }
+        else {title: '404', desc: '<a href="/">Return Home</a>'}
 
 # Template.registerHelper 'htmlSafe' (string)->
 #   return Spacebars.SafeString(string)
