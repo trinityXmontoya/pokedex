@@ -150,6 +150,29 @@
 	<!-- {{/if}} -->
 </template>
 
+<template name="pokeType">
+	<p>{{session "currentType"}}</p>
+	<br>
+	<table id="poke-type-table">
+		<thead class='poke-type-tablehead'>
+			<th class='poke-type-table-id-key'>ID</th>
+			<th>Name</th>
+		</thead>
+
+		{{#each pokemon}}
+		<tr>
+			<td class='poke-type-table-id-key'>{{id}}</td>
+			<td>{{name}}</td>
+			<td><a href="/poke/{{id}}">View Stats</a></td>
+		</tr>
+		{{/each}}
+	</table>
+</template>
+
+<template name="pokeTypeIndex">
+	all the homies
+</template>
+
 <template name="pokeIndex">
 	<!-- {{#if Template.subscriptionsReady}} -->
 	<!-- <div id="all-poke-container"> -->

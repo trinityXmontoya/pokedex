@@ -12,6 +12,18 @@ Router
 		else
 			console.log 'waitin'
 	)
+	this.route('/type',()->
+		console.log 'diz my route'
+		this.wait(Meteor.subscribe('pokemon'))
+		if this.ready()
+			Session.set('currentPage','typeIndex')
+	)
+	this.route('/type/:type', ()->
+		this.wait(Meteor.subscribe('pokemon'))
+		if this.ready()
+			Session.set('currentType', this.params.type)
+			Session.set('currentPage', 'typeShow')
+	)
 	this.route('/:route', ()->
 		this.wait(Meteor.subscribe('pokemon'))
 		if this.ready()

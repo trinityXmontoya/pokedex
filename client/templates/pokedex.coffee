@@ -23,10 +23,18 @@ if Meteor.isClient
         when 'default' then Template.defaultScreen
         when 'index' then Template.pokeIndex
         when 'show' then Template.pokeShow
+        when 'typeShow' then Template.pokeType
+        when 'typeIndex' then Template.pokeTypeIndex
         else Template.ErrScreen
 
   Template.pokeShow.rendered = ()->
     console.log Session.get('currentPokemon')
+
+  Template.pokeType.helpers
+    pokemon: ()->
+      type = Session.get('currentType')
+      return Pokemon.findByType(type)
+
   #     # id = Session.get('currentPokeId')
   #     # console.log id
   #     Session.set('currentPokemon',Pokemon.findOne({id: id}))
@@ -50,6 +58,7 @@ if Meteor.isClient
     currentPage: ()->
       page = Session.get('currentPage')
       poke = Session.get('currentPokemon')
+      type = Session.get('currentType')
       switch page
         when 'default'
           {
@@ -71,9 +80,9 @@ if Meteor.isClient
           {
             title: "##{poke.id} #{poke.name}"
             desc: "
-            TYPE: #{poke.types}
-            <br>
-            <a href='/index'>Return To Pokemon Index</a>
+              TYPE: #{poke.types}
+              <br>
+              <a href='/index'>Return To Pokemon Index</a>
             "
           }
         when 'battle'
@@ -81,10 +90,14 @@ if Meteor.isClient
             title: "Battle Royale"
             desc: "Please choose your trainer to send into battle."
           }
-        when 'dogs'
+        when 'typeShow'
           {
-            title: "dogs"
-            desc: "we made it!!!"
+            title: "#{type} POKEMON"
+            desc: "
+              Scroll down to see more.
+              <br>
+              <a href='/type'>Return to the Type Index.</a>
+            "
           }
         else
           {

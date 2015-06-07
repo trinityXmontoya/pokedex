@@ -310,6 +310,19 @@
 	}
 }
 
+#poke-type-table {
+	text-align: left;
+
+	th {
+		text-transform: uppercase;
+	}
+	.poke-type-tablehead {
+		border-bottom: dashed black 2px;
+	}
+	.poke-type-table-id-key {
+		border-right: dashed black 2px;
+	}
+}
 
 // --------------------
 // INFO SHELL
