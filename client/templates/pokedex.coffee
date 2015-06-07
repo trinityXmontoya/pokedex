@@ -7,7 +7,21 @@ if Meteor.isClient
 
   Template.display.events
     'click #display-btn': ()->
-      toggleMusic()
+      if Session.get('currentPage') == 'show'
+        toggleSpeech()
+      else
+        toggleMusic()
+
+  toggleSpeech = ()->
+    descAudio = $('#audio audio')[0]
+    if descAudio
+      if descAudio.paused
+        descAudio.play()
+      else
+        descAudio.pause()
+    else
+      text = $('#info-screen').text()
+      speak(text, noWorker: true)
 
   toggleMusic = ()->
     pokeSong = document.getElementById('pokemon-theme-song')

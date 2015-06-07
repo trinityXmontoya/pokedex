@@ -21,8 +21,8 @@ Pokemon.seedData = ()->
 							id: poke.national_id
 							name: poke.name
 							types: poke.types.map (t)-> return t.name
-							weight: poke.weight * .220462
-							height: poke.height * .328084
+							weight: (poke.weight * .220462).toFixed(2)
+							height: (poke.height * .328084).toFixed(2)
 							hp: poke.hp
 							attack: poke.attack
 							defense: poke.defense
