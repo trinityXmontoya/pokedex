@@ -310,17 +310,45 @@
 	}
 }
 
-#poke-type-table {
-	text-align: left;
+#poke-type-table-container{
+	display: block;
+	margin: 6px;
 
-	th {
-		text-transform: uppercase;
+	#poke-type-table-header {
+		font-size: 1.5rem;
+		text-transform: capitalize;
+		padding: 0;
+		margin: 0;
+		text-align: left;
 	}
-	.poke-type-tablehead {
-		border-bottom: dashed black 2px;
-	}
-	.poke-type-table-id-key {
-		border-right: dashed black 2px;
+
+	#poke-type-table {
+		font-size: .9rem;
+		text-align: left;
+
+		.dashed-border-right {
+			border-right: dashed black 2px;
+		}
+
+		th {
+			text-transform: uppercase;
+			border-bottom: dashed black 2px;
+		}
+		td:not(.last-child) {
+			border-bottom: dashed black 2px;
+		}
+		tr {
+			  vertical-align: bottom;
+		}
+		.poke-table-img {
+			width: 30px;
+			vertical-align: inherit;
+		}
+		.poke-tablehead {
+			border-bottom: dashed black 2px;
+		}
+		.poke-table-id-key {
+		}
 	}
 }
 

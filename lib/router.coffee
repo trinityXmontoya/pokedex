@@ -4,25 +4,32 @@ Router
 		Session.set('currentPage', 'default')
 	)
 	this.route('/poke/:id', ()->
-		this.wait(Meteor.subscribe('pokemon'))
+		id = parseInt(this.params.id)
+
+		if id not in [1..151]
+			Session.set('currentPage','404')
+
+		this.wait(Meteor.subscribe('pokeReady', id))
 		if this.ready()
-			poke = Pokemon.findOne({id: parseInt(this.params.id)})
+			poke = Pokemon.findOne({id: id})
 			Session.set('currentPokemon', poke)
 			Session.set('currentPage','show')
 		else
 			console.log 'waitin'
 	)
 	this.route('/type',()->
-		console.log 'diz my route'
 		this.wait(Meteor.subscribe('pokemon'))
 		if this.ready()
 			Session.set('currentPage','typeIndex')
 	)
 	this.route('/type/:type', ()->
-		this.wait(Meteor.subscribe('pokemon'))
+		type = this.params.type
+		this.wait(Meteor.subscribe('pokeType', type))
 		if this.ready()
-			Session.set('currentType', this.params.type)
+			Session.set('currentType', type)
 			Session.set('currentPage', 'typeShow')
+		else
+			console.log 'waiting'
 	)
 	this.route('/:route', ()->
 		this.wait(Meteor.subscribe('pokemon'))

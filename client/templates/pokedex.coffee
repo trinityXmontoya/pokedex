@@ -27,22 +27,23 @@ if Meteor.isClient
         when 'typeIndex' then Template.pokeTypeIndex
         else Template.ErrScreen
 
-  Template.pokeShow.rendered = ()->
-    console.log Session.get('currentPokemon')
+  Template.pokeShow.helpers
+    typeFormat: (types)->
+      s = ""
+      for t in types
+        s += "<a href='/type/#{t}'>#{t.capitalize()}</a> "
+      return s
+
+    evolutionFormat: (evolutions)->
+      s = ""
+      for e in evolutions
+        s += "<a href='/poke/#{e.id}'>#{e.name}(#{e.lvl})</a>"
+      return s
 
   Template.pokeType.helpers
     pokemon: ()->
       type = Session.get('currentType')
       return Pokemon.findByType(type)
-
-  #     # id = Session.get('currentPokeId')
-  #     # console.log id
-  #     Session.set('currentPokemon',Pokemon.findOne({id: id}))
-  #     console.log Session.get('currentPokemon'), "here"
-  # Template.pokeShow.helpers
-  #   currentPokemon: ()-> Session.get('currentPokemon')
-    # pokeShow: ()->
-
 
   Template.pokeIndex.helpers
     pokemon: ()->
@@ -80,7 +81,7 @@ if Meteor.isClient
           {
             title: "##{poke.id} #{poke.name}"
             desc: "
-              TYPE: #{poke.types}
+              #{poke.description}
               <br>
               <a href='/index'>Return To Pokemon Index</a>
             "

@@ -119,10 +119,10 @@
 			</div>
 			<ul class="poke-stats">
 				<li>
-					<span class="key">Weight:</span> {{weight}}kg
+					<span class="key">Weight:</span> {{weight}}lbs
 				</li>
 				<li>
-					<span class="key">Height:</span> {{height}}in
+					<span class="key">Height:</span>{{height}}ft
 				</li>
 				<li>
 					<span class="key">HP:</span> {{hp}}
@@ -143,7 +143,11 @@
 					<span class="key">Special Defense:</span> {{special_defense}}
 				</li>
 				<li>
-					{{evolutions}}
+					<span class="key">Type:</span>
+					{{{typeFormat types}}}
+				</li>
+				<li>
+					{{{evolutionFormat evolutions}}}
 				</li>
 			</ul>
 		{{/with}}
@@ -151,22 +155,27 @@
 </template>
 
 <template name="pokeType">
-	<p>{{session "currentType"}}</p>
-	<br>
-	<table id="poke-type-table">
-		<thead class='poke-type-tablehead'>
-			<th class='poke-type-table-id-key'>ID</th>
-			<th>Name</th>
-		</thead>
+	<div id="poke-type-table-container">
+		<p id='poke-type-table-header'>{{session "currentType"}}</p>
+		<br>
+		<table id="poke-type-table">
+			<thead class='poke-tablehead'>
+				<th class='dashed-border-right'>ID</th>
+				<th>Info</th>
+			</thead>
 
-		{{#each pokemon}}
-		<tr>
-			<td class='poke-type-table-id-key'>{{id}}</td>
-			<td>{{name}}</td>
-			<td><a href="/poke/{{id}}">View Stats</a></td>
-		</tr>
-		{{/each}}
-	</table>
+			{{#each pokemon}}
+			<tr>
+				<td class='dashed-border-right'>{{id}}</td>
+				<td class='poke-name'>
+					<img class='poke-table-img' src="http://pokeapi.co/media/img/{{id}}.png">
+					{{name}}
+					<a href="/poke/{{id}}">View Stats</a>
+				</td>
+			</tr>
+			{{/each}}
+		</table>
+	</div>
 </template>
 
 <template name="pokeTypeIndex">
@@ -174,16 +183,12 @@
 </template>
 
 <template name="pokeIndex">
-	<!-- {{#if Template.subscriptionsReady}} -->
-	<!-- <div id="all-poke-container"> -->
-		{{#each pokemon}}
-			<a href="/poke/{{id}}">
-				<div class="poke-container" style="background-image:url('http://pokeapi.co/media/img/{{id}}.png')">
-					<p class="poke-id">{{id}}</p>
-					<p class="poke-name">{{name}}</p>
-				</div>
-			</a>
-		{{/each}}
-	<!-- {{/if}} -->
-	<!-- </div> -->
+	{{#each pokemon}}
+		<a href="/poke/{{id}}">
+			<div class="poke-container" style="background-image:url('http://pokeapi.co/media/img/{{id}}.png')">
+				<p class="poke-id">{{id}}</p>
+				<p class="poke-name">{{name}}</p>
+			</div>
+		</a>
+	{{/each}}
 </template>
