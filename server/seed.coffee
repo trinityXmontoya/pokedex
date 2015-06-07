@@ -4,6 +4,22 @@ Meteor.startup ()->
 		Pokemon.seedData()
 
 Pokemon.seedData = ()->
+
+	#removes any pokemon evolutions beyond the original 151
+	checkEvolutions = (evs)->
+		a = evs.map (e)->
+					id = evId(e.resource_uri)
+					if id > 151
+						return undefined
+					else
+						return {
+							id: evId(e.resource_uri)
+							name: e.to
+						}
+		#http://stackoverflow.com/a/281393/3481754
+		a = a.filter ()-> return true
+		return a
+
 	evId = (evUri)->
 		return parseInt evUri.match(/(?:\/api\/v1\/pokemon\/)+(\d+)(?=\/)/)[1]
 
@@ -29,12 +45,7 @@ Pokemon.seedData = ()->
 							speed: poke.speed
 							special_attack: poke.sp_atk
 							special_defense: poke.sp_def
-							evolutions: poke.evolutions.map (e)->
-								return {
-									lvl: e.level
-									id: evId(e.resource_uri)
-									name: e.to
-								}
+							evolutions: checkEvolutions(poke.evolutions)
 							description: JSON.parse(data2.content).description
 						})
 					else

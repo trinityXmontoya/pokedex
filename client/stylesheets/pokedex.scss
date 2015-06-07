@@ -33,6 +33,19 @@
 // --------------------
 // POKEDEX SHELL
 // --------------------
+* {
+   -moz-user-select: -moz-none;
+   -khtml-user-select: none;
+   -webkit-user-select: none;
+
+   /*
+     Introduced in IE 10.
+     See http://ie.microsoft.com/testdrive/HTML5/msUserSelect/
+   */
+   -ms-user-select: none;
+   user-select: none;
+}
+
 #pokedex {
 	background-color: #FB0505;
 	width: 419px;
@@ -288,22 +301,28 @@
 		width: 100%;
 		margin: 0;
 		padding: 0;
-		font-size: 1.4vw;
 		text-align: left;
+		font-size: .7rem
 	}
 }
 
-.poke-img {
+
+#poke-img {
+	margin-top: 10px;
 	display: inline-block;
+	img {
+		width: 140px;
+	}
 }
 .poke-stats {
 	max-width: 50%;
 	display: inline-block;
 	padding: 0;
-	margin: 0;
+	margin: 10px 0;
 	list-style: none;
 	font-size: .9rem;
 	text-align: left;
+	margin-top: 10px;
 
 	.key {
 		text-transform: uppercase;
@@ -330,24 +349,26 @@
 			border-right: dashed black 2px;
 		}
 
-		th {
-			text-transform: uppercase;
-			border-bottom: dashed black 2px;
-		}
-		td:not(.last-child) {
-			border-bottom: dashed black 2px;
-		}
-		tr {
-			  vertical-align: bottom;
-		}
-		.poke-table-img {
-			width: 30px;
-			vertical-align: inherit;
-		}
 		.poke-tablehead {
 			border-bottom: dashed black 2px;
+
+			.poke-table-th {
+				text-transform: uppercase;
+				border-bottom: dashed black 2px;
+			}
 		}
-		.poke-table-id-key {
+
+		.poke-table-tr {
+			vertical-align: bottom;
+
+			.poke-table-td {
+				border-bottom: dashed black 2px;
+
+				.poke-table-img {
+					width: 30px;
+					vertical-align: inherit;
+				}
+			}
 		}
 	}
 }

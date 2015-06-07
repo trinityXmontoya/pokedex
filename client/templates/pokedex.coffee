@@ -7,12 +7,22 @@ if Meteor.isClient
 
   Template.display.events
     'click #display-btn': ()->
-      if Session.get('currentPage') == 'show'
-        toggleSpeech()
-      else
-        toggleMusic()
+      toggleAudio()
 
-  toggleSpeech = ()->
+  toggleAudio = ()->
+    if Session.get('currentPage') == 'show'
+        text = $('#info-header').text().replace("#","") +
+               $('#info-screen').text().replace("Return To Pokemon Index", "")
+        toggleSpeech(text)
+    else if Session.get('currentPage') == 'types'
+      text = "Welcome to the Pokemon Type Index " +
+              "Select a type to see Pokemon belonging to that family." +
+             $('#display-screen-content').text()
+      toggleSpeech(text)
+    else
+      toggleMusic()
+
+  toggleSpeech = (text)->
     descAudio = $('#audio audio')[0]
     if descAudio
       if descAudio.paused
@@ -20,7 +30,6 @@ if Meteor.isClient
       else
         descAudio.pause()
     else
-      text = $('#info-screen').text()
       speak(text, {noWorker: true, speed: 160, pitch: 40 })
 
   toggleMusic = ()->
@@ -43,7 +52,7 @@ if Meteor.isClient
         when 'index' then Template.pokeIndex
         when 'show' then Template.pokeShow
         when 'typeShow' then Template.pokeType
-        when 'typeIndex' then Template.pokeTypeIndex
+        when 'types' then Template.pokeTypeIndex
         else Template.ErrScreen
 
   Template.pokeShow.helpers
@@ -56,8 +65,13 @@ if Meteor.isClient
     evolutionFormat: (evolutions)->
       s = ""
       for e in evolutions
-        s += "<a href='/poke/#{e.id}'>#{e.name}(#{e.lvl})</a>"
+        s += "<a href='/poke/#{e.id}'>#{e.name}</a>"
       return s
+
+    padId: (id)->
+      # console.log self.Template.pokeShow.__helpers.paidId, "this"
+      id = id.toString()
+      return if id.length < 3 then self.Template.pokeShow.__helpers[" padId"]("0" + id) else id
 
   Template.pokeType.helpers
     pokemon: ()->
@@ -119,10 +133,10 @@ if Meteor.isClient
               <a href='/types'>Return to the Type Index.</a>
             "
           }
-        when 'typeIndex'
+        when 'types'
           {
             title: 'Pokemon Type Index'
-            desc: 'Click a type to see Pokemon belonging to that family.'
+            desc: 'Select a type to see Pokemon belonging to that family.'
           }
         else
           {

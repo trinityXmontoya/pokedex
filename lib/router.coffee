@@ -18,15 +18,9 @@ Router
 			poke = Pokemon.findOne({id: id})
 			Session.set('currentPokemon', poke)
 			Session.set('currentPage','show')
+			this.next()
 		else
 			console.log 'waitin'
-	)
-	this.route('/types',()->
-		this.wait(Meteor.subscribe('pokemon'))
-		if this.ready()
-			Session.set('currentPage','typeIndex')
-		else
-			console.log 'waiting'
 	)
 	this.route('/type/:type', ()->
 		type = this.params.type
@@ -34,6 +28,7 @@ Router
 		if this.ready()
 			Session.set('currentType', type)
 			Session.set('currentPage', 'typeShow')
+			this.next()
 		else
 			console.log 'waiting'
 	)
@@ -41,4 +36,5 @@ Router
 		this.wait(Meteor.subscribe('pokemon'))
 		if this.ready()
 			Session.set('currentPage', this.params.route)
+			this.next()
 	)

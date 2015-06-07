@@ -116,7 +116,7 @@
 	<!-- {{#if Template.subscriptionsReady}} -->
 		{{#with session "currentPokemon"}}
 			<div id="poke-img">
-				<img src="http://pokeapi.co/media/img/{{id}}.png" alt="">
+				<img src="http://assets7.pokemon.com/assets/cms2/img/pokedex/detail/{{padId id}}.png" alt="">
 			</div>
 			<ul class="poke-stats">
 				<li>
@@ -147,9 +147,11 @@
 					<span class="key">Type:</span>
 					{{{typeFormat types}}}
 				</li>
+				{{#if evolutions}}
 				<li>
-					{{{evolutionFormat evolutions}}}
+					<span class="key">Evolves to:</span> {{{evolutionFormat evolutions}}}
 				</li>
+				{{/if}}
 			</ul>
 		{{/with}}
 	<!-- {{/if}} -->
@@ -161,14 +163,14 @@
 		<br>
 		<table id="poke-type-table">
 			<thead class='poke-tablehead'>
-				<th class='dashed-border-right'>ID</th>
-				<th>Info</th>
+				<th class='poke-table-th dashed-border-right'>ID</th>
+				<th class='poke-table-th' >Info</th>
 			</thead>
 
 			{{#each pokemon}}
-			<tr>
-				<td class='dashed-border-right'>{{id}}</td>
-				<td class='poke-name'>
+			<tr class='poke-table-tr'>
+				<td class='poke-table-td dashed-border-right'>{{id}}</td>
+				<td class='poke-table-td'>
 					<img class='poke-table-img' src="http://pokeapi.co/media/img/{{id}}.png">
 					{{name}}
 					<a href="/poke/{{id}}">View Stats</a>
