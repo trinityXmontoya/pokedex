@@ -1,3 +1,7 @@
+Router.onBeforeAction ()->
+	$('#audio audio').remove()
+	this.next()
+
 Router
 .map ()->
 	this.route('/', ()->
@@ -17,10 +21,12 @@ Router
 		else
 			console.log 'waitin'
 	)
-	this.route('/type',()->
+	this.route('/types',()->
 		this.wait(Meteor.subscribe('pokemon'))
 		if this.ready()
 			Session.set('currentPage','typeIndex')
+		else
+			console.log 'waiting'
 	)
 	this.route('/type/:type', ()->
 		type = this.params.type

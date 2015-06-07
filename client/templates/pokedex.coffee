@@ -30,6 +30,11 @@ if Meteor.isClient
     else
       pokeSong.pause()
 
+
+  Template.pokeTypeIndex.helpers
+    pokeTypes: ()->
+      return Pokemon.typeOpts()
+
   Template.displayScreenContent.helpers
     currentScreen: ()->
       page = Session.get('currentPage')
@@ -111,8 +116,13 @@ if Meteor.isClient
             desc: "
               Scroll down to see more.
               <br>
-              <a href='/type'>Return to the Type Index.</a>
+              <a href='/types'>Return to the Type Index.</a>
             "
+          }
+        when 'typeIndex'
+          {
+            title: 'Pokemon Type Index'
+            desc: 'Click a type to see Pokemon belonging to that family.'
           }
         else
           {

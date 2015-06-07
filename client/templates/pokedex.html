@@ -180,7 +180,11 @@
 </template>
 
 <template name="pokeTypeIndex">
-	all the homies
+	<ul>
+		{{#each pokeTypes}}
+			<a href="/type/{{this}}"><li>{{this}}</li></a>
+		{{/each}}
+	</ul>
 </template>
 
 <template name="pokeIndex">
