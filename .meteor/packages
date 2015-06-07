@@ -5,9 +5,8 @@
 # but you can also edit it by hand.
 
 meteor-platform
-autopublish
 insecure
 coffeescript
 fourseven:scss
-iron:router
 http
+iron:router

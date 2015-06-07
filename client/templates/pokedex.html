@@ -111,28 +111,56 @@
 </template>
 
 
-<template name="pokePreview">
-	<ul class="poke-stats">
-				<li>{{weight}}</li>
-				<li>{{height}}</li>
-				<li>{{hp}}</li>
-				<li>{{attack}}</li>
-				<li>{{defense}}</li>
-				<li>{{speed}}</li>
-				<li>{{special_atk}}</li>
-				<li>{{special_df}}</li>
-				<li>{{evolutions}}</li>
-				<li>{{types}}</li>
+<template name="pokeShow">
+	<!-- {{#if Template.subscriptionsReady}} -->
+		{{#with session "currentPokemon"}}
+			<div id="poke-img">
+				<img src="http://pokeapi.co/media/img/{{id}}.png" alt="">
+			</div>
+			<ul class="poke-stats">
+				<li>
+					<span class="key">Weight:</span> {{weight}}kg
+				</li>
+				<li>
+					<span class="key">Height:</span> {{height}}in
+				</li>
+				<li>
+					<span class="key">HP:</span> {{hp}}
+				</li>
+				<li>
+					<span class="key">Attack:</span> {{attack}}
+				</li>
+				<li>
+					<span class="key">Defense:</span> {{defense}}
+				</li>
+				<li>
+					<span class="key">Speed:</span> {{speed}}
+				</li>
+				<li>
+					<span class="key">Special Attack:</span> {{special_attack}}
+				</li>
+				<li>
+					<span class="key">Special Defense:</span> {{special_defense}}
+				</li>
+				<li>
+					{{evolutions}}
+				</li>
 			</ul>
+		{{/with}}
+	<!-- {{/if}} -->
 </template>
 
 <template name="pokeIndex">
+	<!-- {{#if Template.subscriptionsReady}} -->
 	<!-- <div id="all-poke-container"> -->
 		{{#each pokemon}}
-		<div class="poke-container" style="background-image:url('http://pokeapi.co/media/img/{{id}}.png')">
-			<p class="poke-id">{{id}}</p>
-			<p class="poke-name">{{name}}</p>
-		</div>
+			<a href="/poke/{{id}}">
+				<div class="poke-container" style="background-image:url('http://pokeapi.co/media/img/{{id}}.png')">
+					<p class="poke-id">{{id}}</p>
+					<p class="poke-name">{{name}}</p>
+				</div>
+			</a>
 		{{/each}}
+	<!-- {{/if}} -->
 	<!-- </div> -->
 </template>

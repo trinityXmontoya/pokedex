@@ -1,7 +1,7 @@
 Meteor.startup ()->
 	if Pokemon.find().count() == 0
-		console.log 'none'
 		Pokemon.seedData()
+	# Meteor.publish('dbLoaded')
 
 Pokemon.seedData = ()->
 	evIdRegex = (evUri)->
