@@ -21,7 +21,7 @@ if Meteor.isClient
         descAudio.pause()
     else
       text = $('#info-screen').text()
-      speak(text, noWorker: true)
+      speak(text, {noWorker: true, speed: 160, pitch: 40 })
 
   toggleMusic = ()->
     pokeSong = document.getElementById('pokemon-theme-song')
