@@ -58,6 +58,8 @@ Template.controlPanel.helpers
             <a href="/index">Pokemon Index</a>
             <br>
             <a href="/types">Type Index</a>
+            <br>
+            <a href="/about">About</a>
           '
         }
       when 'index'
