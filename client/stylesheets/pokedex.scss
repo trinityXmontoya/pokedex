@@ -1,8 +1,5 @@
 @import "mixins.scss";
 
-// --------------------
-// POKEDEX SHELL
-// --------------------
 * {
    -moz-user-select: -moz-none;
    -khtml-user-select: none;
@@ -11,6 +8,13 @@
    user-select: none;
 }
 
+body {
+	background: url(http://subtlepatterns.com/patterns/binding_dark.png);
+}
+
+// --------------------
+// POKEDEX SHELL
+// --------------------
 #pokedex {
 	background-color: #FB0505;
 	width: 419px;
