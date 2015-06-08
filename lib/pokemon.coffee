@@ -10,4 +10,6 @@ Pokemon.findByType = (type)->
 	)
 
 Pokemon.typeOpts = ()->
-	return ["poison","grass","fire","flying","water","bug","normal","electric","ground","fairy","psychic","dragon","ice","fighting","rock", "steel"]
+	return ["poison", "grass", "fire", "flying", "water", "bug",
+					"normal", "electric", "ground", "fairy", "psychic",
+					"dragon", "ice", "fighting", "rock", "steel"]

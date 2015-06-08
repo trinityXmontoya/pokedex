@@ -1,0 +1,44 @@
+<template name="pokeShow">
+
+	{{#with session "currentPokemon"}}
+		<div id="poke-img">
+			<img src="http://assets7.pokemon.com/assets/cms2/img/pokedex/detail/{{padId id}}.png" alt="">
+		</div>
+		<ul class="poke-stats">
+			<li>
+				<span class="key">Weight:</span> {{weight}}lbs
+			</li>
+			<li>
+				<span class="key">Height:</span>{{height}}ft
+			</li>
+			<li>
+				<span class="key">HP:</span> {{hp}}
+			</li>
+			<li>
+				<span class="key">Attack:</span> {{attack}}
+			</li>
+			<li>
+				<span class="key">Defense:</span> {{defense}}
+			</li>
+			<li>
+				<span class="key">Speed:</span> {{speed}}
+			</li>
+			<li>
+				<span class="key">Special Attack:</span> {{special_attack}}
+			</li>
+			<li>
+				<span class="key">Special Defense:</span> {{special_defense}}
+			</li>
+			<li>
+				<span class="key">Type:</span>
+				{{{typeFormat types}}}
+			</li>
+			{{#if evolutions}}
+			<li>
+				<span class="key">Evolves to:</span> {{{evolutionFormat evolutions}}}
+			</li>
+			{{/if}}
+		</ul>
+	{{/with}}
+
+</template>

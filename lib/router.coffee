@@ -20,8 +20,6 @@ Router
 				Session.set('currentPokemon', poke)
 				Session.set('currentPage','show')
 				this.next()
-			else
-				console.log 'waitin'
 	)
 	this.route('/type/:type', ()->
 		type = this.params.type
@@ -35,8 +33,6 @@ Router
 				Session.set('currentType', type)
 				Session.set('currentPage', 'typeShow')
 				this.next()
-			else
-				console.log 'waiting'
 	)
 	this.route('/:route', ()->
 		this.wait(Meteor.subscribe('pokemon'))

@@ -1,45 +1,5 @@
-// --------------------
-// MIXINS
-// --------------------
-@mixin vertical-align {
-	position: relative;
-	top: 50%;
-	transform: translateY(-50%);
-}
+@import "mixins.scss";
 
-@mixin circle($diameter,$bg-color){
-	width: $diameter;
-	height: $diameter;
-	background-color: $bg-color;
-	border-radius: 100%;
-}
-
-@mixin BLK-border($width){
-	border: solid black $width;
-}
-
-@mixin btn-click-effect($margin-diff:'auto') {
-	@if $margin-diff == 'auto' {
-		&:active { box-shadow: none;}
-	}
-	@else {
-		&:active {
-			box-shadow: none;
-			margin-top: $margin-diff !important;
-		}
-	}
-}
-
-#about-container {
-	flex: 1;
-
-	#about-squirtle-gif {
-		width: 112px;
-	}
-}
-#four-oh-four-gif {
-	flex: 1;
-}
 // --------------------
 // POKEDEX SHELL
 // --------------------
@@ -47,11 +7,6 @@
    -moz-user-select: -moz-none;
    -khtml-user-select: none;
    -webkit-user-select: none;
-
-   /*
-     Introduced in IE 10.
-     See http://ie.microsoft.com/testdrive/HTML5/msUserSelect/
-   */
    -ms-user-select: none;
    user-select: none;
 }
@@ -66,7 +21,7 @@
 	font-family: monospace;
 
 	#top-indicator-area {
-		 margin: 15px 0;
+		 margin: 15px 0 5px 0;
 		 overflow: hidden;
 
 		#big-blue-indicator-light {
@@ -150,7 +105,7 @@
 	  display: inline-block;
 	  float: right;
 	  box-shadow: -3px 1px 0px 0px black;
-	  margin: -57px 27px 0 0;
+	  margin: -57px 27px 4px 0;
 
 	  #pokeball-top-half {
 	  	background-color: #FE0000;
@@ -238,7 +193,6 @@
 			  margin: 0 auto;
   			text-align: center;
   			overflow-y: scroll;
-  			// background-color: black;
 		  }
 		}
 
@@ -287,6 +241,8 @@
 // --------------------
 // DISPLAY CONTENT
 // --------------------
+
+// 'index'
 .poke-container {
 	@include BLK-border(4px);
 	position: relative;
@@ -319,7 +275,7 @@
 	}
 }
 
-
+// 'show'
 #poke-img {
 	margin-top: 10px;
 	display: inline-block;
@@ -346,6 +302,7 @@
 	}
 }
 
+// 'types'
 #poke-type-table-container{
 	display: block;
 	margin: 6px;
@@ -390,7 +347,7 @@
 	}
 }
 
-
+// 'typeIndex'
 #poke-type-index-list {
 	flex: 1;
   list-style: none;
@@ -401,6 +358,20 @@
   .poke-type-li {
 		margin-bottom: 5px;
   }
+}
+
+// 'about'
+#about-container {
+	flex: 1;
+
+	#about-squirtle-gif {
+		width: 112px;
+	}
+}
+
+// '404'
+#four-oh-four-gif {
+	flex: 1;
 }
 
 // --------------------
@@ -449,7 +420,6 @@
 					font-family: 'font-awesome-specific';
 					font-size: 1rem;
 					color: #5493FF;
-					// color: #0241AE;
 					text-align: center;
 					text-shadow: 1px 1px 1px #486392;
 				}

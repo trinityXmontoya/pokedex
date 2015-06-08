@@ -1,0 +1,9 @@
+<template name="pokeTypeIndex">
+
+	<ul id='poke-type-index-list'>
+		{{#each pokeTypes}}
+			<li class='poke-type-li'><a href="/type/{{this}}">{{this}}</a></li>
+		{{/each}}
+	</ul>
+
+</template>

@@ -1,0 +1,31 @@
+// --------------------
+// MIXINS
+// --------------------
+@mixin vertical-align {
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+@mixin circle($diameter,$bg-color){
+	width: $diameter;
+	height: $diameter;
+	background-color: $bg-color;
+	border-radius: 100%;
+}
+
+@mixin BLK-border($width){
+	border: solid black $width;
+}
+
+@mixin btn-click-effect($margin-diff:'auto') {
+	@if $margin-diff == 'auto' {
+		&:active { box-shadow: none;}
+	}
+	@else {
+		&:active {
+			box-shadow: none;
+			margin-top: $margin-diff !important;
+		}
+	}
+}

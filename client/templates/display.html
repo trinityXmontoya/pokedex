@@ -1,0 +1,31 @@
+<template name="display">
+
+	<div id="display-wrapper">
+		<div id="display-container">
+			<div id="display-cutout">
+				<div id="display-cutout-faux-border"></div>
+			</div>
+			<ul id="display-indicator-lights">
+				<li class="display-light-red"></li>
+				<li class="display-light-red"></li>
+			</ul>
+			<div id="display-screen">
+				<div id="display-screen-content">
+					{{>displayScreenContent}}
+				</div>
+			</div>
+			<div id="display-controls">
+				<div id="display-btn">
+					<p class='icon-volume-down'></p>
+				</div>
+				<ul id="display-speakers">
+					<li class="display-speaker"></li>
+					<li class="display-speaker"></li>
+					<li class="display-speaker"></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<audio id="pokemon-theme-song" src="http://a.tumblr.com/tumblr_lt59z9tjGx1qgw2ypo1.mp3"></audio>
+
+</template>
