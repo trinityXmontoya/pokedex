@@ -30,6 +30,16 @@
 	}
 }
 
+#about-container {
+	flex: 1;
+
+	#about-squirtle-gif {
+		width: 112px;
+	}
+}
+#four-oh-four-gif {
+	flex: 1;
+}
 // --------------------
 // POKEDEX SHELL
 // --------------------
@@ -52,7 +62,7 @@
   height: 613px;
   border-radius: 42px;
   box-shadow: -13px 10px 0 10px #e50000;
-  margin: 0 auto;
+  margin: 0 auto 40px auto;
 	font-family: monospace;
 
 	#top-indicator-area {
@@ -65,7 +75,7 @@
 		  margin: 20px 0 0 20px;
 		  display: inline-block;
 
-			.big-blue-indicator-light-inner-circle {
+			#big-blue-indicator-light-inner-circle {
 				@include circle(55px, #01ffff);
 				@include BLK-border(3px);
 				margin: 2px 7px;
@@ -125,11 +135,11 @@
 		}
 
 		.top-area-curve-connector {
-			height: 19px;
+			height: 20px;
 		  background-color: black;
 		  width: 4px;
 		  display: inline-block;
-		  margin: -32px 0 0 -4px;
+		  margin: -33px 0 0 -4px;
 		  position: absolute;
 		}
 	}
@@ -181,8 +191,8 @@
 	  	border-width: 60px 0 0 60px;
 	  	border-color: transparent transparent transparent #FB0505;
 	  	position: absolute;
-	  	bottom: -8px;
-	  	left: -6px;
+	  	bottom: -10px;
+	  	left: -7px;
 
 	  	#display-cutout-faux-border {
 	  		background-color: black;
@@ -228,6 +238,7 @@
 			  margin: 0 auto;
   			text-align: center;
   			overflow-y: scroll;
+  			// background-color: black;
 		  }
 		}
 
@@ -249,6 +260,8 @@
 					padding: 0;
 					font-family: 'font-awesome-specific';
 					font-size: 1rem;
+					color: #F76E6E;
+  				text-shadow: 1px 1px 1px #E00000;
 				}
 			}
 
@@ -324,6 +337,10 @@
 	text-align: left;
 	margin-top: 10px;
 
+	li:last-child {
+		margin-bottom: 10px;
+	}
+
 	.key {
 		text-transform: uppercase;
 	}
@@ -373,6 +390,19 @@
 	}
 }
 
+
+#poke-type-index-list {
+	flex: 1;
+  list-style: none;
+  text-transform: uppercase;
+  margin: 15px auto;
+  padding: 0;
+
+  .poke-type-li {
+		margin-bottom: 5px;
+  }
+}
+
 // --------------------
 // INFO SHELL
 // --------------------
@@ -418,7 +448,10 @@
 					padding: 0;
 					font-family: 'font-awesome-specific';
 					font-size: 1rem;
-					color: black;
+					color: #5493FF;
+					// color: #0241AE;
+					text-align: center;
+					text-shadow: 1px 1px 1px #486392;
 				}
 			}
 		}
@@ -445,7 +478,7 @@
 				background-color: #056565;
 				position: absolute;
 				border: solid 2px black;
-				box-shadow: -4px 2px 0 0 black;
+				box-shadow: 0 2px 0 0 black;
 				@include btn-click-effect();
 
 				&.key-left {
@@ -455,6 +488,16 @@
 				  border-top-left-radius: 5px;
 				  border-bottom-left-radius: 5px;
 				  border-right: none;
+
+				  .arrow-left {
+				  	@include vertical-align;
+						width: 0;
+						height: 0;
+						border-top: 8px solid transparent;
+						border-bottom: 8px solid transparent;
+						border-right:8px solid #1C8C8C;
+						margin-left: 3px;
+					}
 				}
 				&.key-right {
 				  width: 38px;
@@ -464,6 +507,19 @@
 				  border-top-right-radius: 5px;
 				  border-bottom-right-radius: 5px;
 				  border-left: none;
+
+				  .arrow-right {
+						width: 0;
+						height: 0;
+						border-top: 8px solid transparent;
+						border-bottom: 8px solid transparent;
+						border-left: 8px solid #1C8C8C;
+						position: absolute;
+  					right: 3px;
+  					top: 50%;
+  					transform: translateY(-50%);
+					}
+
 				}
 				&.key-top {
 					width: 20px;
@@ -473,6 +529,15 @@
 				  margin: -2px 27px;
 				  border-bottom: none;
 				  z-index: 1;
+
+				  .arrow-up {
+				  	width: 0;
+						height: 0;
+						border-left: 8px solid transparent;
+						border-right: 8px solid transparent;
+						border-bottom: 8px solid #1C8C8C;
+						margin: 3px auto;
+				  }
 				}
 				&.key-bottom {
 					width: 20px;
@@ -482,6 +547,18 @@
 				  left: 50%;
 				  margin: 35px 0 0 27px;
 				  border-top: none;
+
+				  .arrow-down {
+						width: 0;
+						height: 0;
+						border-left: 8px solid transparent;
+						border-right: 8px solid transparent;
+						border-top: 8px solid #1C8C8C;
+						position: absolute;
+  					bottom: 3px;
+  					left: 50%;
+  					margin-left: -7px;
+					}
 				}
 			}
 
@@ -489,7 +566,7 @@
 				position: absolute;
 			  background-color: #056565;
 			  height: 20px;
-			  width: 28px;
+			  width: 34px;
 			  margin: 27px 0 0 23px;
 			  z-index: 2;
 			}

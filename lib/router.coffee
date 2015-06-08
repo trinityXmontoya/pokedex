@@ -12,25 +12,31 @@ Router
 
 		if id not in [1..151]
 			Session.set('currentPage','404')
-
-		this.wait(Meteor.subscribe('pokeReady', id))
-		if this.ready()
-			poke = Pokemon.findOne({id: id})
-			Session.set('currentPokemon', poke)
-			Session.set('currentPage','show')
 			this.next()
 		else
-			console.log 'waitin'
+			this.wait(Meteor.subscribe('pokeReady', id))
+			if this.ready()
+				poke = Pokemon.findOne({id: id})
+				Session.set('currentPokemon', poke)
+				Session.set('currentPage','show')
+				this.next()
+			else
+				console.log 'waitin'
 	)
 	this.route('/type/:type', ()->
 		type = this.params.type
-		this.wait(Meteor.subscribe('pokeType', type))
-		if this.ready()
-			Session.set('currentType', type)
-			Session.set('currentPage', 'typeShow')
+
+		if type not in Pokemon.typeOpts()
+			Session.set('currentPage','404')
 			this.next()
 		else
-			console.log 'waiting'
+			this.wait(Meteor.subscribe('pokeType', type))
+			if this.ready()
+				Session.set('currentType', type)
+				Session.set('currentPage', 'typeShow')
+				this.next()
+			else
+				console.log 'waiting'
 	)
 	this.route('/:route', ()->
 		this.wait(Meteor.subscribe('pokemon'))

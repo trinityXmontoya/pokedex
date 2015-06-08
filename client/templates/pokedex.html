@@ -14,7 +14,7 @@
 			<div id="top-indicator-area">
 				<div id="indicator-lights">
 					<div id="big-blue-indicator-light">
-						<div class="big-blue-indicator-light-inner-circle"></div>
+						<div id="big-blue-indicator-light-inner-circle"></div>
 					</div>
 					<ul id="small-indicator-lights">
 						<li class="small-indicator-light red-light"></li>
@@ -87,11 +87,19 @@
 				{{{currentPage.desc}}}
 			</div>
 			<div id="info-arrow-keys">
-				<div class="arrow-key key-top"></div>
-				<div class="arrow-key key-left"></div>
+				<div data-direction="up" class="arrow-key key-top">
+					<div class="arrow-up"></div>
+				</div>
+				<div data-direction="left" class="arrow-key key-left">
+					<div class="arrow-left"></div>
+				</div>
 				<div class="arrow-key-center"></div>
-				<div class="arrow-key key-right"></div>
-				<div class="arrow-key key-bottom"></div>
+				<div data-direction="right" class="arrow-key key-right">
+					<div class="arrow-right"></div>
+				</div>
+				<div data-direction="down" class="arrow-key key-bottom">
+					<div class="arrow-down"></div>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -107,8 +115,30 @@
 </template>
 
 <template name="ErrScreen">
-	Not sure how you got here...
-	Return to normalcy!
+	<img id="four-oh-four-gif" src="http://i.giphy.com/OAdFogajbW2cg.gif">
+</template>
+
+
+<template name="about">
+	<div id='about-container'>
+		<p>
+			Pure CSS Pokedex
+			<br>
+			(to help you catch 'em all)
+			<br>
+			<a href="https://github.com/trinityXmontoya/pokedex">Repo</a>
+			<br>
+			<a href="https://www.meteor.com/">MeteorJS</a> +
+			<a href="https://www.mongodb.org/">MongoDB</a>
+			<br>
+			Created by <a href='http://www.trinitymontoya.com/'>Trinity Montoya</a>
+			<br>
+		  <img id='about-squirtle-gif' src="https://33.media.tumblr.com/1b4df6af45ea2d075eddea259d99f3bb/tumblr_n06ukcRZUy1tr9moqo1_500.gif" alt="">
+		  <br>
+		  Note: Only tested in Chrome 43.0.2 and Firefox 35.0.1(and even then only kind of...)
+	  </p>
+  </div>
+
 </template>
 
 
@@ -182,9 +212,9 @@
 </template>
 
 <template name="pokeTypeIndex">
-	<ul>
+	<ul id='poke-type-index-list'>
 		{{#each pokeTypes}}
-			<a href="/type/{{this}}"><li>{{this}}</li></a>
+			<li class='poke-type-li'><a href="/type/{{this}}">{{this}}</a></li>
 		{{/each}}
 	</ul>
 </template>
