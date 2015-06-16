@@ -65,7 +65,7 @@ Template.controlPanel.helpers
       when 'index'
         {
           title: "Complete Pokemon Index"
-          desc: "Select a Pokemon to view its Stats and hear its description."
+          desc: "Select a Pokemon to view its Stats and read its description."
         }
       when 'show'
         {
