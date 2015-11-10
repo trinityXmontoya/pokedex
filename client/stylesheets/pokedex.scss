@@ -9,7 +9,7 @@
 }
 
 body {
-	background: url(http://subtlepatterns.com/patterns/binding_dark.png);
+	background: url(http://subtlepatterns2015.subtlepatterns.netdna-cdn.com/patterns/geometry2.png);
 }
 
 // --------------------
@@ -197,6 +197,11 @@ body {
 			  margin: 0 auto;
   			text-align: center;
   			overflow-y: scroll;
+
+  			img {
+				  width: 100%;
+				  height: 100%;
+  			}
 		  }
 		}
 
