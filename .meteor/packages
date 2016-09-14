@@ -10,3 +10,4 @@ coffeescript
 fourseven:scss
 http
 iron:router
+iron:middleware-stack@1.1.0
