@@ -1,6 +1,7 @@
 Router.onBeforeAction ()->
 	$('#audio audio').remove()
-	$('#pokemon-theme-song')[0].pause()
+	if $('#pokemon-theme-song')[0]
+		$('#pokemon-theme-song')[0].pause()
 	this.next()
 
 Router
