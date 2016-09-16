@@ -39,7 +39,6 @@ Router
 	this.route('/:routez', ()->
 		this.wait(Meteor.subscribe('pokemon'))
 		if this.ready()
-			console.log(this, "here i am")
 			Session.set('currentPage', this.params.routez)
 			this.next()
 	)
